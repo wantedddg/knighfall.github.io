@@ -19,15 +19,43 @@
         overflow: hidden;
         height: 100%;
         width: 100%;
-        background-color: #222200;
+        background-color: #0b0b0b;
+        font-family: 'Pixelify Sans', sans-serif;
       }
       canvas {
         display: block;
       }
     </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <canvas id="gameCanvas"></canvas>
+    <div id="mainMenu">
+      <div class="menu-background"></div>
+      <div class="menu-content">
+        <h1 class="game-title">Knightfall Ember War</h1>
+        <div class="button-group">
+          <button id="btnSinglePlayer" class="menu-btn primary">Single Player</button>
+          <button id="btnMultiplayer" class="menu-btn locked" disabled>
+            Multiplayer
+            <span class="locked-icon">🔒</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loadingScreen">
+      <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <h2 class="loading-title">Loading...</h2>
+        <p class="loading-subtitle">Your adventure is about to begin</p>
+      </div>
+    </div>
+
+    <div id="hotbar" style="display: none;">
+      <img src="assets/ui/hotbar_transparent.png" alt="Inventory Hotbar" class="hotbar-image" />
+    </div>
+
+    <canvas id="gameCanvas" style="display: none;"></canvas>
 
     <script src="animations.js"></script>
     <script src="main.js"></script>
